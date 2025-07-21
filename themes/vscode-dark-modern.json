@@ -1,0 +1,505 @@
+{
+  "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
+  "author": "You!",
+  "name": "Real VSCode Dark Modern",
+  "themes": [
+    {
+      "name": "Real VSCode Dark Modern",
+      "appearance": "dark",
+      "style": {
+        "background.appearance": "opaque",
+        "accents": ["#ffff00"],
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L83
+        "border": "#2B2B2B",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L54
+        "border.variant": "#454545",
+        "border.focused": "#ffff00",
+        "border.selected": "#2B2B2B",
+        "border.transparent": "#2B2B2B",
+        "border.disabled": "#2B2B2B",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L45
+        "elevated_surface.background": "#202020",
+        // ???
+        "surface.background": "#000000",
+        // editor background
+        "background": "#1F1F1F",
+        "element.background": null, // "#0078D4",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/listColors.ts#L66
+        "element.hover": "#2A2D2E",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/listColors.ts#L34
+        "element.active": "#04395E",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/listColors.ts#L46
+        "element.selected": "#37373D",
+        // ???
+        "element.disabled": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/common/theme.ts#L239
+        "drop_target.background": "#53595D80",
+        "ghost_element.background": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/common/theme.ts#L338
+        "ghost_element.hover": "#FFFFFF06",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/common/theme.ts#L324
+        "ghost_element.active": "#FFFFFF0C",
+        // quickInputList.focusBackground
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/quickpickColors.ts#L50
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/listColors.ts#L34
+        "ghost_element.selected": "#04395E",
+        // null
+        "ghost_element.disabled": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L48
+        "text": "#CCCCCC",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L84
+        "text.muted": "#CCCCCC",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L53
+        "text.placeholder": "#989898",
+        // https://github.com/microsoft/vscode/blob/1.102.0/src/vs/platform/theme/common/colors/baseColors.ts#L18
+        "text.disabled": "#CCCCCC80",
+        // null
+        "text.accent": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L49
+        "icon": "#CCCCCC",
+        "icon.muted": null,
+        "icon.disabled": "#ff0000",
+        "icon.placeholder": null,
+        "icon.accent": null,
+        "debugger.accent": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L89
+        "status_bar.background": "#181818",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L122
+        "title_bar.background": "#181818",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L125
+        "title_bar.inactive_background": "#1F1F1F",
+        "toolbar.background": "#1F1F1F",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L37
+        "tab_bar.background": "#181818",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L107
+        "tab.inactive_background": "#181818",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L100
+        "tab.active_background": "#1F1F1F",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L34
+        "search.match_background": "#9E6A03",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L82
+        // vscode sideBar.background === zed panel.background
+        "panel.background": "#181818",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L47
+        "panel.focused_border": "#0078D4",
+        // https://github.com/microsoft/vscode/blob/1.102.0/src/vs/platform/theme/common/colors/listColors.ts#L135
+        "panel.indent_guide": "#58585866",
+        // null
+        "panel.indent_guide_hover": null,
+        // https://github.com/microsoft/vscode/blob/1.102.0/src/vs/platform/theme/common/colors/listColors.ts#L131
+        "panel.indent_guide_active": "#585858",
+        "pane.focused_border": "ff00ff",
+        "pane_group.border": "#ffff00", // "#FFFFFF17",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/miscColors.ts#L57
+        "scrollbar.thumb.background": "#79797966",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/miscColors.ts#L61
+        "scrollbar.thumb.hover_background": "#646464B3",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/miscColors.ts#L65
+        "scrollbar.thumb.active_background": "#BFBFBF66",
+        "scrollbar.thumb.border": null,
+        // editor background?
+        "scrollbar.track.background": null,
+        "scrollbar.track.border": "#101214",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/minimapColors.ts#L50
+        "minimap.thumb.background": "#79797933",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/minimapColors.ts#L54
+        "minimap.thumb.hover_background": "#64646459",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/minimapColors.ts#L58
+        "minimap.thumb.active_background": "#BFBFBF33",
+        "minimap.thumb.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L35
+        "editor.foreground": "#CCCCCC",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L33
+        "editor.background": "#1F1F1F",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/editor/common/core/editorColorRegistry.ts#L61
+        "editor.gutter.background": "#1F1F1F",
+        "editor.subheader.background": null,
+        "editor.active_line.background": null,
+        "editor.highlighted_line.background": null,
+        "editor.debugger_active_line.background": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L43
+        "editor.line_number": "#6E7681",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L42
+        "editor.active_line_number": "#CCCCCC",
+        "editor.hover_line_number": null,
+        "editor.invisible": null,
+        "editor.wrap_guide": "#2B2B2B",
+        "editor.active_wrap_guide": "#2B2B2B",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L9
+        "editor.indent_guide": "#404040",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L10
+        "editor.indent_guide_active": "#707070",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/editor/contrib/wordHighlighter/browser/highlightDecorations.ts#L14
+        "editor.document_highlight.read_background": "#575757B8",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/editor/contrib/wordHighlighter/browser/highlightDecorations.ts#L15
+        "editor.document_highlight.write_background": "#004972B8",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/editor/common/core/editorColorRegistry.ts#L55
+        "editor.document_highlight.bracket_background": "#0064001A",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L18
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L64
+        "terminal.background": "#181818",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L112
+        "terminal.foreground": "#CCCCCC",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L26
+        "terminal.ansi.background": null,
+        "terminal.bright_foreground": null,
+        "terminal.dim_foreground": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L107
+        "terminal.ansi.black": "#000000",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L179
+        "terminal.ansi.bright_black": "#666666",
+        "terminal.ansi.dim_black": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L116
+        "terminal.ansi.red": "#CD3131",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L188
+        "terminal.ansi.bright_red": "#F14C4C",
+        "terminal.ansi.dim_red": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L125
+        "terminal.ansi.green": "#0DBC79",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L197
+        "terminal.ansi.bright_green": "#23D18B",
+        "terminal.ansi.dim_green": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L134
+        "terminal.ansi.yellow": "#E5E510",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L206
+        "terminal.ansi.bright_yellow": "#F5F543",
+        "terminal.ansi.dim_yellow": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L143
+        "terminal.ansi.blue": "#2472C8",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L215
+        "terminal.ansi.bright_blue": "#3B8EEA",
+        "terminal.ansi.dim_blue": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L152
+        "terminal.ansi.magenta": "#BC3FBC",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L224
+        "terminal.ansi.bright_magenta": "#D670D6",
+        "terminal.ansi.dim_magenta": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L161
+        "terminal.ansi.cyan": "#11A8CD",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L233
+        "terminal.ansi.bright_cyan": "#29B8DB",
+        "terminal.ansi.dim_cyan": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L170
+        "terminal.ansi.white": "#E5E5E5",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/workbench/contrib/terminal/common/terminalColorRegistry.ts#L242
+        "terminal.ansi.bright_white": "#E5E5E5",
+        "terminal.ansi.dim_white": null,
+        "link_text.hover": "#4DAAFC",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L39
+        "version_control.added": "#2EA043",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L40
+        "version_control.deleted": "#F85149",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L41
+        "version_control.modified": "#0078D4",
+        "version_control.renamed": null,
+        "version_control.conflict": null,
+        "version_control.ignored": null,
+        "version_control.conflict_marker.ours": null,
+        "version_control.conflict_marker.theirs": null,
+        "version_control_conflict_ours_background": null,
+        "version_control_conflict_theirs_background": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/git/package.json#L3437
+        "conflict": "#E4676B",
+        // null
+        "conflict.background": null,
+        // null
+        "conflict.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/git/package.json#L3357
+        "created": "#81B88B",
+        // null
+        "created.background": null,
+        // null
+        "created.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/git/package.json#L3377
+        "deleted": "#C74E39",
+        // null
+        "deleted.background": null,
+        // null
+        "deleted.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L67
+        "error": "#F14C4C",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L63
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L45
+        "error.background": "#202020",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L71
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L54
+        "error.border": "#454545",
+        "hidden": "#9D9D9D",
+        "hidden.background": null,
+        "hidden.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L102
+        "hint": "#EEEEEEB3",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L45
+        "hint.background": "#202020",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L106
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L54
+        "hint.border": "#454545",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/git/package.json#L3407
+        "ignored": "#8C8C8C",
+        "ignored.background": null,
+        "ignored.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L93
+        "info": "#3794FF",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L89
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L45
+        "info.background": "#202020",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L97
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L54
+        "info.border": "#454545",
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/git/package.json#L3367
+        "modified": "#E2C08D",
+        // null
+        "modified.background": null,
+        // null
+        "modified.border": null,
+        // ???
+        "predictive": null,
+        "predictive.background": null,
+        "predictive.border": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/git/package.json#L3387
+        "renamed": "#73C991",
+        // null
+        "renamed.background": null,
+        // null
+        "renamed.border": null,
+        // ???
+        "success": null,
+        "success.background": null,
+        "success.border": null,
+        "unreachable": null,
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L45
+        "unreachable.background": "#202020",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L54
+        "unreachable.border": "#454545",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L80
+        "warning": "#CCA700",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L76
+        // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_modern.json#L45
+        "warning.background": "#202020",
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L84
+        // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L54
+        "warning.border": "#454545",
+        "players": [
+          {
+            // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/editor/common/core/editorColorRegistry.ts#L21
+            "cursor": "#AEAFAD",
+            // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/editor/common/core/editorColorRegistry.ts#L22
+            "background": null,
+            // https://github.com/microsoft/vscode/blob/1.101.2/src/vs/platform/theme/common/colors/editorColors.ts#L118
+            // This color must be transparent
+            // #1F1F1F + #3CA6FF2D = #264F78
+            "selection": "#3CA6FF2D"
+          }
+        ],
+        "syntax": {
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L111
+          "attribute": {
+            "color": "#9CDCFE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L73
+          "boolean": {
+            "color": "#569CD6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L67
+          "comment": {
+            "color": "#6A9955",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L67
+          "comment.doc": {
+            "color": "#6A9955",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L73
+          "constant": {
+            "color": "#569CD6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // ???
+          "constructor": {
+            "color": "#569CD6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L43
+          "embedded": {
+            "color": "#D4D4D4",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // ???
+          "emphasis": {
+            "color": "#ff0000",
+            "font_style": null,
+            "font_weight": null
+          },
+          "emphasis.strong": {
+            "color": "#569CD6",
+            "background_color": null,
+            // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L49
+            "font_style": "italic",
+            "font_weight": 700
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_plus.json#L16
+          "function": {
+            "color": "#DCDCAA",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L326
+          "keyword": {
+            "color": "#569CD6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_plus.json#L86
+          "keyword.import": {
+            "color": "#C586C0"
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L84
+          "number": {
+            "color": "#B5CEA8",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L338
+          "operator": {
+            "color": "#D4D4D4",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "preproc": {
+            "color": "#569cd6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L320
+          "property": {
+            "color": "#9CDCFE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation": {
+            "color": "#CCCCCC",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.bracket": {
+            "color": "#CCCCCC",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.delimiter": {
+            "color": "#CCCCCC",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.list_marker": {
+            "color": "#CCCCCC",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L300
+          "punctuation.special": {
+            "color": "#569CD6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L271
+          "string": {
+            "color": "#CE9178",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_plus.json#L189
+          "string.escape": {
+            "color": "#D7BA7D",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L289
+          "string.regex": {
+            "color": "#D16969",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special": {
+            "color": "#FF0000",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special.symbol": {
+            "color": "#FF0000",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L96
+          "tag": {
+            "color": "#569CD6",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_vs.json#L407
+          "text.literal": {
+            "color": "#CE9178",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_plus.json#L56
+          "type": {
+            "color": "#4EC9B0",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_plus.json#L99
+          "variable": {
+            "color": "#9CDCFE",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          },
+          // https://github.com/microsoft/vscode/blob/1.101.2/extensions/theme-defaults/themes/dark_plus.json#L109
+          "variable.special": {
+            "color": "#4FC1FF",
+            "background_color": null,
+            "font_style": null,
+            "font_weight": null
+          }
+        }
+      }
+    }
+  ]
+}
