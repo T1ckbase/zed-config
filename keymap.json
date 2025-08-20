@@ -7,9 +7,15 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "EmptyPane || SharedScreen || MarkdownPreview || vim_mode == normal",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "space f f": "file_finder::Toggle",
+      "space f w": [
+        "task::Spawn",
+        { "task_name": "Find Words", "reveal_target": "center" }
+      ],
+      "space c": "pane::CloseActiveItem",
+      "space e": "workspace::ToggleLeftDock"
     }
   },
   {
@@ -18,37 +24,57 @@
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
       "shift-alt-k": "editor::DuplicateLineUp",
-      "shift-alt-j": "editor::DuplicateLineDown"
+      "shift-alt-j": "editor::DuplicateLineDown",
+      "ctrl-alt-shift-k": "editor::AddSelectionAbove",
+      "ctrl-alt-shift-j": "editor::AddSelectionBelow"
+      // "alt-l": "pane::ActivateNextItem",
+      // "alt-h": "pane::ActivatePreviousItem"
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "vim_mode == insert",
     "bindings": {
       "ctrl-c": "editor::Copy", // vim default: return to normal mode
       // "ctrl-x": "editor::Cut",           // vim default: decrement
-      "ctrl-v": "editor::Paste", // vim default: visual block mode
+      "ctrl-v": "editor::Paste" // vim default: PushLiteral
       // "ctrl-y": "editor::Undo",          // vim default: line up
-      "ctrl-f": "buffer_search::Deploy" // vim default: page down
+      // "ctrl-f": "buffer_search::Deploy" // vim default: page down
       // "ctrl-o": "workspace::Open",       // vim default: go back
       // "ctrl-a": "editor::SelectAll",     // vim default: increment
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "vim_mode == insert",
     "bindings": {
-      "j k": "vim::SwitchToNormalMode",
-      "k j": "vim::SwitchToNormalMode"
+      // "j k": "vim::NormalBefore",
+      // "k j": "vim::NormalBefore",
+      "ctrl-j": "editor::NewlineBelow"
     }
   },
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "vim_mode == normal",
     "bindings": {
-      "shift-y": ["workspace::SendKeystrokes", "y $"]
-      // "g o": ["workspace::SendKeystrokes", "g g"]
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "g o": ["workspace::SendKeystrokes", "g g 0"],
+      "space f b": "tab_switcher::ToggleAll",
+      "space m p": "markdown::OpenPreviewToTheSide"
     }
   },
   {
-    "context": "Editor && mode == full",
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "Editor && !VimControl",
     "bindings": {
       "ctrl-alt-shift-up": "editor::AddSelectionAbove", // Insert Cursor Above
       "ctrl-alt-shift-down": "editor::AddSelectionBelow", // Insert Cursor Below
@@ -57,11 +83,12 @@
       "ctrl-shift-enter": "editor::NewlineAbove",
       "alt-enter": "assistant::InlineAssist"
     }
-  },
-  {
-    "context": "Pane > Editor",
-    "bindings": {
-      "ctrl-enter": "editor::NewlineBelow"
-    }
   }
+
+  // {
+  //   "context": "Pane > Editor",
+  //   "bindings": {
+  //     "ctrl-enter": "editor::NewlineBelow"
+  //   }
+  // }
 ]

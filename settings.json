@@ -7,9 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "VSCode Default Dark Modern",
+  "auto_update_extensions": {
+    "vscode-dark-modern": false
+  },
+  "theme": "VSCode Dark Modern",
   "icon_theme": "Material Icon Theme",
   "experimental.theme_overrides": {
+    "editor.document_highlight.read_background": "#FFFFFF06", // editor.wordHighlightBackground
+    "editor.document_highlight.write_background": "#FFFFFF06", // editor.wordHighlightStrongBackground
+    "editor.document_highlight.bracket_background": "#0064001a" // editorBracketMatch.background
     // "ghost_element.hover": "#373A3D",
     // "syntax": {
     //   "sdkfjafsd": {
@@ -29,23 +35,24 @@
     "toggle_relative_line_numbers": true
   },
   "vertical_scroll_margin": 4,
-  "lsp_highlight_debounce": 0,
+  "horizontal_scroll_margin": 8,
   "show_edit_predictions": false,
   "edit_predictions": {
     "mode": "eager"
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "supermaven"
   },
   "agent": {
+    "use_modifier_to_send": true,
     "inline_assistant_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "copilot_chat",
+      "model": "claude-3.5-sonnet"
     },
     "default_profile": "ask",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+      "provider": "openrouter",
+      "model": "openai/gpt-oss-120b"
     }
   },
   "diagnostics": {
@@ -67,25 +74,25 @@
   },
   "cursor_blink": false,
   "buffer_font_size": 14,
-  "buffer_font_weight": 300,
+  "buffer_font_weight": 600,
   "buffer_line_height": { "custom": 1.2 },
   "buffer_font_family": "JetBrainsMonoNL Nerd Font",
   "buffer_font_fallbacks": ["Symbols Nerd Font"],
   "ui_font_size": 15,
   "ui_font_family": "JetBrainsMonoNL Nerd Font",
-  // "ui_font_weight": 300,
+  "ui_font_fallbacks": ["Symbols Nerd Font"],
+  "ui_font_weight": 700,
+  "agent_font_size": 15,
   "unnecessary_code_fade": 0.667,
   "current_line_highlight": "none",
+  "hide_mouse": "never",
   "format_on_save": "off",
   "languages": {
-    "HTML": {
-      "format_on_save": "prettier",
-      "tab_size": 2
-    },
     "CSS": {
       "tab_size": 2
     },
-    "SCSS": {
+    "HTML": {
+      "format_on_save": "prettier",
       "tab_size": 2
     },
     "JSON": {
@@ -98,9 +105,23 @@
       "format_on_save": "on",
       "formatter": "language_server",
       "tab_size": 2
+    },
+    "Rust": {
+      "format_on_save": "language_server"
+    },
+    "SCSS": {
+      "tab_size": 2
+    },
+    "Zig": {
+      "format_on_save": "language_server",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
     }
   },
   "terminal": {
+    "font_weight": 500,
+    "font_family": "CaskaydiaMono Nerd Font",
     "detect_venv": "off",
     "shell": {
       "program": "pwsh"
@@ -111,7 +132,119 @@
     "line_height": { "custom": 1.2 },
     "default_height": 160
   },
+  "toolbar": {
+    "code_actions": true
+  },
+  "file_finder": {
+    "modal_max_width": "medium"
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_file_finder": true,
+    "enable_preview_from_code_navigation": false
+  },
+  "completions": {
+    // "lsp_insert_mode": "insert"
+  },
+  "lsp": {
+    "basedpyright": {
+      "binary": {
+        "path": "uvx",
+        "arguments": [
+          "--quiet",
+          "--from",
+          "basedpyright",
+          "basedpyright-langserver",
+          "--stdio"
+        ]
+      },
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/Scripts/python"
+        },
+        "basedpyright.analysis": {
+          "diagnosticMode": "workspace",
+          "inlayHints": {
+            "callArgumentNames": false
+          }
+        }
+      }
+    },
+    "emmet-language-server": {
+      // "binary": {
+      //   "path": "bunx",
+      //   "arguments": [
+      //     "--silent",
+      //     "--bun",
+      //     "@olrtg/emmet-language-server",
+      //     "--stdio"
+      //   ]
+      // }
+      "binary": {
+        "path": "deno",
+        "arguments": [
+          "run",
+          "--quiet",
+          "--reload",
+          "--no-prompt",
+          "--allow-env",
+          "npm:@olrtg/emmet-language-server",
+          "--stdio"
+        ]
+      }
+    },
+    "pylsp": {
+      "binary": {
+        "path": "uvx",
+        "arguments": ["--quiet", "--from", "python-lsp-server", "pylsp"]
+      }
+    },
+    "pyrefly": {
+      "binary": {
+        "path": "uvx",
+        "arguments": ["--quiet", "pyrefly", "lsp"]
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    },
+    "ty": {
+      "binary": {
+        "path": "uvx",
+        "arguments": ["--quiet", "ty", "server"]
+      }
+    },
+    "vtsls": {
+      "binary": {
+        "path": "deno",
+        "arguments": [
+          "run",
+          "--quiet",
+          "--reload",
+          "--allow-all",
+          "npm:@vtsls/language-server",
+          "--stdio"
+        ]
+      }
+    },
+    "zls": {
+      "binary": {
+        "path": "zls"
+      },
+      "settings": {
+        "enable_build_on_save": true,
+        "zls": {
+          "zig_exe_path": "C:\\Users\\Nah\\scoop\\shims\\zig.exe"
+        }
+      }
+    }
+  },
   "remove_trailing_whitespace_on_save": false
+
   // temp
   // "minimap": {
   //   "show": "always",
