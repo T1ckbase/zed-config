@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "auto_install_extensions": {
+    "json": true
+  },
   "auto_update_extensions": {
     "vscode-dark-modern": false
   },
@@ -46,13 +49,13 @@
   "agent": {
     "use_modifier_to_send": true,
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.5-sonnet"
+      "provider": "openai",
+      "model": "gpt-4.1"
     },
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
-      "provider": "openrouter",
-      "model": "openai/gpt-oss-120b"
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
     }
   },
   "diagnostics": {
@@ -83,11 +86,17 @@
   "ui_font_fallbacks": ["Symbols Nerd Font"],
   "ui_font_weight": 700,
   "agent_font_size": 15,
-  "unnecessary_code_fade": 0.667,
+  "unnecessary_code_fade": 0.5,
   "current_line_highlight": "none",
   "hide_mouse": "never",
   "format_on_save": "off",
+  "file_types": {
+    "JSON": [".prettierrc"]
+  },
   "languages": {
+    "Astro": {
+      "tab_size": 2
+    },
     "CSS": {
       "tab_size": 2
     },
@@ -121,7 +130,8 @@
   },
   "terminal": {
     "font_weight": 500,
-    "font_family": "CaskaydiaMono Nerd Font",
+    "font_family": "Cascadia Mono",
+    "font_fallbacks": ["Symbols Nerd Font"],
     "detect_venv": "off",
     "shell": {
       "program": "pwsh"
@@ -176,6 +186,7 @@
       //   "arguments": [
       //     "--silent",
       //     "--bun",
+      //     "--package",
       //     "@olrtg/emmet-language-server",
       //     "--stdio"
       //   ]
@@ -187,6 +198,7 @@
           "--quiet",
           "--reload",
           "--no-prompt",
+          "--no-lock",
           "--allow-env",
           "npm:@olrtg/emmet-language-server",
           "--stdio"
@@ -218,28 +230,41 @@
         "arguments": ["--quiet", "ty", "server"]
       }
     },
-    "vtsls": {
-      "binary": {
-        "path": "deno",
-        "arguments": [
-          "run",
-          "--quiet",
-          "--reload",
-          "--allow-all",
-          "npm:@vtsls/language-server",
-          "--stdio"
-        ]
-      }
-    },
+    // "vscode-css-language-server": {
+    //   "binary": {
+    //     "path": "deno",
+    //     "arguments": [
+    //       "run",
+    //       "--quiet",
+    //       "--no-lock",
+    //       "--allow-all",
+    //       "npm:@t1ckbase/vscode-langservers-extracted/vscode-css-language-server",
+    //       "--stdio"
+    //     ]
+    //   }
+    // },
+    // "vtsls": {
+    //   "binary": {
+    //     "path": "deno",
+    //     "arguments": [
+    //       "run",
+    //       "--quiet",
+    //       "--no-lock",
+    //       "--allow-all",
+    //       "npm:@vtsls/language-server",
+    //       "--stdio"
+    //     ]
+    //   }
+    // },
     "zls": {
       "binary": {
         "path": "zls"
       },
       "settings": {
-        "enable_build_on_save": true,
-        "zls": {
-          "zig_exe_path": "C:\\Users\\Nah\\scoop\\shims\\zig.exe"
-        }
+        "enable_build_on_save": true
+        // "zls": {
+        //   "zig_exe_path": "C:\\Users\\Nah\\scoop\\shims\\zig.exe"
+        // }
       }
     }
   },
