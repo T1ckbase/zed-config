@@ -1,63 +1,92 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "auto_install_extensions": {
-    "json": true
-  },
   "auto_update_extensions": {
     "vscode-dark-modern": false
   },
   "theme": "VSCode Dark Modern",
-  "icon_theme": "Material Icon Theme",
-  "experimental.theme_overrides": {
-    "editor.document_highlight.read_background": "#FFFFFF06", // editor.wordHighlightBackground
-    "editor.document_highlight.write_background": "#FFFFFF06", // editor.wordHighlightStrongBackground
-    "editor.document_highlight.bracket_background": "#0064001a" // editorBracketMatch.background
-    // "ghost_element.hover": "#373A3D",
-    // "syntax": {
-    //   "sdkfjafsd": {
-    //     "color": "#ff0000",
-    //     "background_color": null,
-    //     "font_style": null,
-    //     "font_weight": null
-    //   }
-    // }
-  },
+  "icon_theme": "Zed (Default)",
   "base_keymap": "VSCode",
-  "auto_update": false,
-  "relative_line_numbers": false,
-  "vim_mode": true,
-  "vim": {
-    "use_system_clipboard": "on_yank",
-    "toggle_relative_line_numbers": true
-  },
-  "vertical_scroll_margin": 4,
-  "horizontal_scroll_margin": 8,
-  "show_edit_predictions": false,
-  "edit_predictions": {
-    "mode": "eager"
-  },
   "features": {
     "edit_prediction_provider": "supermaven"
   },
+  "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+  "buffer_font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
+  "buffer_font_features": {
+    "calt": 0
+  },
+  "buffer_font_size": 14,
+  // "buffer_font_weight": 600,
+  "buffer_line_height": { "custom": 1.2 },
+  "ui_font_family": "JetBrainsMonoNL Nerd Font",
+  "ui_font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
+  // "ui_font_weight": 700,
+  "ui_font_size": 15,
+  "agent_ui_font_size": 15,
+  "agent_buffer_font_size": 12,
+  "unnecessary_code_fade": 0.4,
+  "vim_mode": true,
+  "cursor_blink": false,
+  "hide_mouse": "never",
+  "current_line_highlight": "none",
+  "rounded_selection": false,
+  "minimum_contrast_for_highlights": 0,
+  "show_edit_predictions": false,
+  "calls": {
+    "mute_on_join": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "code_actions": true
+  },
+  "scrollbar": {
+    "show": "auto"
+  },
+  "vertical_scroll_margin": 4,
+  "horizontal_scroll_margin": 8,
+  "project_panel": {
+    "entry_spacing": "standard",
+    "scrollbar": {
+      "show": "auto"
+    }
+  },
+  "outline_panel": {
+    "scrollbar": {
+      "show": "auto"
+    }
+  },
   "agent": {
-    "use_modifier_to_send": true,
+    "default_profile": "ask",
     "inline_assistant_model": {
       "provider": "openai",
       "model": "gpt-4.1"
     },
-    "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
-    }
+      "provider": "OpenCode Zen",
+      "model": "big-pickle"
+    },
+    "use_modifier_to_send": true
   },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+    "show_diagnostics": "all"
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_file_finder": true,
+    "enable_preview_from_code_navigation": false
+  },
+  "file_finder": {
+    "modal_max_width": "medium"
+  },
+  // "remove_trailing_whitespace_on_save": false,
+  "format_on_save": "off",
+  "preferred_line_length": 160,
+  "tab_size": 2,
+  // "telemetry": {
+  //   "diagnostics": false,
+  //   "metrics": false
+  // },
+  "auto_update": true,
   "diagnostics": {
     "inline": {
       "enabled": true,
@@ -67,107 +96,125 @@
       "max_severity": "error"
     }
   },
-  "project_panel": {
-    "entry_spacing": "standard"
+  "edit_predictions": {
+    "mode": "eager"
   },
-  "tabs": {
-    "file_icons": true,
-    "git_status": true,
-    "show_diagnostics": "all"
-  },
-  "cursor_blink": false,
-  "buffer_font_size": 14,
-  "buffer_font_weight": 600,
-  "buffer_line_height": { "custom": 1.2 },
-  "buffer_font_family": "JetBrainsMonoNL Nerd Font",
-  "buffer_font_fallbacks": ["Symbols Nerd Font"],
-  "ui_font_size": 15,
-  "ui_font_family": "JetBrainsMonoNL Nerd Font",
-  "ui_font_fallbacks": ["Symbols Nerd Font"],
-  "ui_font_weight": 700,
-  "agent_font_size": 15,
-  "unnecessary_code_fade": 0.5,
-  "current_line_highlight": "none",
-  "hide_mouse": "never",
-  "format_on_save": "off",
-  "file_types": {
-    "JSON": [".prettierrc"]
-  },
-  "languages": {
-    "Astro": {
-      "tab_size": 2
-    },
-    "CSS": {
-      "tab_size": 2
-    },
-    "HTML": {
-      "format_on_save": "prettier",
-      "tab_size": 2
-    },
-    "JSON": {
-      "format_on_save": "prettier"
-    },
-    "JSONC": {
-      "format_on_save": "prettier"
-    },
-    "Lua": {
-      "format_on_save": "on",
-      "formatter": "language_server",
-      "tab_size": 2
-    },
-    "Rust": {
-      "format_on_save": "language_server"
-    },
-    "SCSS": {
-      "tab_size": 2
-    },
-    "Zig": {
-      "format_on_save": "language_server",
-      "code_actions_on_format": {
-        "source.organizeImports": true
-      }
-    }
+  "status_bar": {
+    "line_endings_button": true
   },
   "terminal": {
-    "font_weight": 500,
-    "font_family": "Cascadia Mono",
-    "font_fallbacks": ["Symbols Nerd Font"],
-    "detect_venv": "off",
     "shell": {
       "program": "pwsh"
     },
-    "toolbar": {
-      "breadcrumbs": false
-    },
+    "default_height": 160,
     "line_height": { "custom": 1.2 },
-    "default_height": 160
+    "detect_venv": "off",
+    "scrollbar": {
+      "show": "auto"
+    },
+    "font_family": "Berkeley Mono",
+    "font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
+    // "font_weight": 500,
+    "minimum_contrast": 0
   },
-  "toolbar": {
-    "code_actions": true
+  "file_types": {
+    "JSON": [".prettierrc"],
+    "JSONC": ["wrangler.json"]
   },
-  "file_finder": {
-    "modal_max_width": "medium"
+  "node": {
+    "ignore_system_version": true
   },
-  "preview_tabs": {
-    "enabled": true,
-    "enable_preview_from_file_finder": true,
-    "enable_preview_from_code_navigation": false
+  "auto_install_extensions": {
+    "astro": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "glsl": true,
+    "html": true,
+    "lua": true,
+    "zig": true,
+    "emmet": true,
+    "biome": true,
+    "deno": true,
+    "pyrefly": true,
+    "opencode": true,
+    "svelte": true,
+    "json": true,
+    "proto": true,
+    "toml": true
   },
   "completions": {
     // "lsp_insert_mode": "insert"
   },
+  "languages": {
+    "JSON": {
+      "format_on_save": "on"
+    },
+    "JSONC": {
+      "format_on_save": "on"
+    },
+    "Lua": {
+      "format_on_save": "on",
+      "formatter": "language_server"
+    },
+    "Rust": {
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "Zig": {
+      "formatter": [
+        {
+          "code_action": "source.organizeImports"
+        },
+        "language_server"
+      ],
+      "format_on_save": "on"
+    }
+  },
+  "language_models": {
+    "openai_compatible": {
+      "OpenCode Zen": {
+        "api_url": "https://opencode.ai/zen/v1",
+        "available_models": [
+          {
+            "name": "grok-code",
+            "display_name": "Grok Code Fast 1",
+            "max_tokens": 256000,
+            "max_output_tokens": 256000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          },
+          {
+            "name": "big-pickle",
+            "display_name": "Big Pickle",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    }
+  },
   "lsp": {
     "basedpyright": {
-      "binary": {
-        "path": "uvx",
-        "arguments": [
-          "--quiet",
-          "--from",
-          "basedpyright",
-          "basedpyright-langserver",
-          "--stdio"
-        ]
-      },
+      // "binary": {
+      //   "path": "uvx",
+      //   "arguments": [
+      //     "--quiet",
+      //     "--from",
+      //     "basedpyright",
+      //     "basedpyright-langserver",
+      //     "--stdio"
+      //   ]
+      // },
       "settings": {
         "python": {
           "pythonPath": ".venv/Scripts/python"
@@ -180,37 +227,42 @@
         }
       }
     },
-    "emmet-language-server": {
-      // "binary": {
-      //   "path": "bunx",
-      //   "arguments": [
-      //     "--silent",
-      //     "--bun",
-      //     "--package",
-      //     "@olrtg/emmet-language-server",
-      //     "--stdio"
-      //   ]
-      // }
-      "binary": {
-        "path": "deno",
-        "arguments": [
-          "run",
-          "--quiet",
-          "--reload",
-          "--no-prompt",
-          "--no-lock",
-          "--allow-env",
-          "npm:@olrtg/emmet-language-server",
-          "--stdio"
-        ]
+    "biome": {
+      "settings": {
+        "require_config_file": true
       }
     },
-    "pylsp": {
-      "binary": {
-        "path": "uvx",
-        "arguments": ["--quiet", "--from", "python-lsp-server", "pylsp"]
-      }
-    },
+    // "emmet-language-server": {
+    //   // "binary": {
+    //   //   "path": "bunx",
+    //   //   "arguments": [
+    //   //     "--silent",
+    //   //     "--bun",
+    //   //     "--package",
+    //   //     "@olrtg/emmet-language-server",
+    //   //     "--stdio"
+    //   //   ]
+    //   // }
+    //   "binary": {
+    //     "path": "deno",
+    //     "arguments": [
+    //       "run",
+    //       "--quiet",
+    //       "--reload",
+    //       "--no-prompt",
+    //       "--no-lock",
+    //       "--allow-env",
+    //       "npm:@olrtg/emmet-language-server",
+    //       "--stdio"
+    //     ]
+    //   }
+    // },
+    // "pylsp": {
+    //   "binary": {
+    //     "path": "uvx",
+    //     "arguments": ["--quiet", "--from", "python-lsp-server", "pylsp"]
+    //   }
+    // },
     "pyrefly": {
       "binary": {
         "path": "uvx",
@@ -224,38 +276,6 @@
         }
       }
     },
-    "ty": {
-      "binary": {
-        "path": "uvx",
-        "arguments": ["--quiet", "ty", "server"]
-      }
-    },
-    // "vscode-css-language-server": {
-    //   "binary": {
-    //     "path": "deno",
-    //     "arguments": [
-    //       "run",
-    //       "--quiet",
-    //       "--no-lock",
-    //       "--allow-all",
-    //       "npm:@t1ckbase/vscode-langservers-extracted/vscode-css-language-server",
-    //       "--stdio"
-    //     ]
-    //   }
-    // },
-    // "vtsls": {
-    //   "binary": {
-    //     "path": "deno",
-    //     "arguments": [
-    //       "run",
-    //       "--quiet",
-    //       "--no-lock",
-    //       "--allow-all",
-    //       "npm:@vtsls/language-server",
-    //       "--stdio"
-    //     ]
-    //   }
-    // },
     "zls": {
       "binary": {
         "path": "zls"
@@ -263,14 +283,39 @@
       "settings": {
         "enable_build_on_save": true
         // "zls": {
-        //   "zig_exe_path": "C:\\Users\\Nah\\scoop\\shims\\zig.exe"
+        //   "zig_exe_path": "C:\\Users\\Nah\\scoop\\shims\\zig.exe" // zig-dev
         // }
       }
     }
   },
-  "remove_trailing_whitespace_on_save": false
+  "vim": {
+    "toggle_relative_line_numbers": true,
+    // "use_system_clipboard": "on_yank",
+    "highlight_on_yank_duration": 80
+  },
+  "context_servers": {},
+  "agent_servers": {
+    // "gemini": {
+    //   "ignore_system_version": false
+    // },
+  },
 
-  // temp
+  "experimental.theme_overrides": {
+    // "editor.document_highlight.read_background": "#FFFFFF06", // editor.wordHighlightBackground
+    // "editor.document_highlight.write_background": "#FFFFFF06", // editor.wordHighlightStrongBackground
+    // "editor.document_highlight.bracket_background": "#0064001a" // editorBracketMatch.background
+    // // "ghost_element.hover": "#373A3D",
+    // // "syntax": {
+    // //   "sdkfjafsd": {
+    // //     "color": "#ff0000",
+    // //     "background_color": null,
+    // //     "font_style": null,
+    // //     "font_weight": null
+    // //   }
+    // // }
+  }
+
+  // test
   // "minimap": {
   //   "show": "always",
   //   "thumb": "always",

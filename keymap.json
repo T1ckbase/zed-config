@@ -1,19 +1,16 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-w": null,
+      "ctrl-w c": "pane::CloseActiveItem"
+    }
+  },
   {
     "context": "EmptyPane || SharedScreen || MarkdownPreview || vim_mode == normal",
     "bindings": {
       "space f f": "file_finder::Toggle",
-      "space f w": [
-        "task::Spawn",
-        { "task_name": "Find Words", "reveal_target": "center" }
-      ],
+      "space f w": ["task::Spawn", { "task_name": "Find Words", "reveal_target": "center" }],
       "space c": "pane::CloseActiveItem",
       "space e": "workspace::ToggleLeftDock"
     }
@@ -46,8 +43,6 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
-      // "j k": "vim::NormalBefore",
-      // "k j": "vim::NormalBefore",
       "ctrl-j": "editor::NewlineBelow"
     }
   },

@@ -7,9 +7,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "VSCode Default Dark Modern",
+  "buffer_font_features": {
+    "calt": 0
+  },
+  "auto_install_extensions": {
+    "json": true
+  },
+  "auto_update_extensions": {
+    "vscode-dark-modern": false
+  },
+  "theme": "VSCode Dark Modern",
   "icon_theme": "Material Icon Theme",
   "experimental.theme_overrides": {
+    "editor.document_highlight.read_background": "#FFFFFF06", // editor.wordHighlightBackground
+    "editor.document_highlight.write_background": "#FFFFFF06", // editor.wordHighlightStrongBackground
+    "editor.document_highlight.bracket_background": "#0064001a" // editorBracketMatch.background
     // "ghost_element.hover": "#373A3D",
     // "syntax": {
     //   "sdkfjafsd": {
@@ -21,7 +33,7 @@
     // }
   },
   "base_keymap": "VSCode",
-  "auto_update": false,
+  "auto_update": true,
   "relative_line_numbers": false,
   "vim_mode": true,
   "vim": {
@@ -29,21 +41,25 @@
     "toggle_relative_line_numbers": true
   },
   "vertical_scroll_margin": 4,
-  "lsp_highlight_debounce": 0,
+  "horizontal_scroll_margin": 8,
   "show_edit_predictions": false,
   "edit_predictions": {
     "mode": "eager"
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "supermaven"
   },
   "agent": {
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash"
+    "use_modifier_to_send": true,
+    "inline_assistant_model": {
+      "provider": "openai",
+      "model": "gpt-4.1"
     },
-    "version": "2"
+    "default_profile": "write",
+    "default_model": {
+      "provider": "OpenCode Zen",
+      "model": "grok-code"
+    }
   },
   "diagnostics": {
     "inline": {
@@ -64,39 +80,69 @@
   },
   "cursor_blink": false,
   "buffer_font_size": 14,
-  "buffer_font_weight": 300,
+  // "buffer_font_weight": 600,
   "buffer_line_height": { "custom": 1.2 },
   "buffer_font_family": "JetBrainsMonoNL Nerd Font",
-  "buffer_font_fallbacks": ["Symbols Nerd Font"],
+  "buffer_font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
   "ui_font_size": 15,
   "ui_font_family": "JetBrainsMonoNL Nerd Font",
-  // "ui_font_weight": 300,
-  "unnecessary_code_fade": 0.667,
+  "ui_font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
+  // "ui_font_weight": 700,
+  "agent_ui_font_size": 15,
+  "unnecessary_code_fade": 0.5,
   "current_line_highlight": "none",
+  "hide_mouse": "never",
   "format_on_save": "off",
+  "file_types": {
+    "JSON": [".prettierrc"]
+  },
   "languages": {
-    "HTML": {
-      "format_on_save": "prettier"
+    "Astro": {
+      "tab_size": 2
     },
     "CSS": {
       "tab_size": 2
     },
-    "SCSS": {
+    "HTML": {
+      "formatter": "prettier",
+      "format_on_save": "on",
       "tab_size": 2
     },
     "JSON": {
-      "format_on_save": "prettier"
+      "formatter": "prettier",
+      "format_on_save": "on"
     },
     "JSONC": {
-      "format_on_save": "prettier"
+      "formatter": "prettier",
+      "format_on_save": "on"
     },
     "Lua": {
       "format_on_save": "on",
       "formatter": "language_server",
       "tab_size": 2
+    },
+    "Rust": {
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "SCSS": {
+      "tab_size": 2
+    },
+    "Zig": {
+      "formatter": [
+        {
+          "code_action": "source.organizeImports"
+        },
+        "language_server"
+      ],
+      "format_on_save": "on"
     }
   },
   "terminal": {
+    // "font_weight": 500,
+    "font_family": "Berkeley Mono",
+    "font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
+    "detect_venv": "off",
     "shell": {
       "program": "pwsh"
     },
@@ -106,7 +152,177 @@
     "line_height": { "custom": 1.2 },
     "default_height": 160
   },
+  "toolbar": {
+    "code_actions": true
+  },
+  "file_finder": {
+    "modal_max_width": "medium"
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_file_finder": true,
+    "enable_preview_from_code_navigation": false
+  },
+  "completions": {
+    // "lsp_insert_mode": "insert"
+  },
+  "lsp": {
+    "basedpyright": {
+      // "binary": {
+      //   "path": "uvx",
+      //   "arguments": [
+      //     "--quiet",
+      //     "--from",
+      //     "basedpyright",
+      //     "basedpyright-langserver",
+      //     "--stdio"
+      //   ]
+      // },
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/Scripts/python"
+        },
+        "basedpyright.analysis": {
+          "diagnosticMode": "workspace",
+          "inlayHints": {
+            "callArgumentNames": false
+          }
+        }
+      }
+    },
+    // "emmet-language-server": {
+    //   // "binary": {
+    //   //   "path": "bunx",
+    //   //   "arguments": [
+    //   //     "--silent",
+    //   //     "--bun",
+    //   //     "--package",
+    //   //     "@olrtg/emmet-language-server",
+    //   //     "--stdio"
+    //   //   ]
+    //   // }
+    //   "binary": {
+    //     "path": "deno",
+    //     "arguments": [
+    //       "run",
+    //       "--quiet",
+    //       "--reload",
+    //       "--no-prompt",
+    //       "--no-lock",
+    //       "--allow-env",
+    //       "npm:@olrtg/emmet-language-server",
+    //       "--stdio"
+    //     ]
+    //   }
+    // },
+    // "pylsp": {
+    //   "binary": {
+    //     "path": "uvx",
+    //     "arguments": ["--quiet", "--from", "python-lsp-server", "pylsp"]
+    //   }
+    // },
+    "pyrefly": {
+      "binary": {
+        "path": "uvx",
+        "arguments": ["--quiet", "pyrefly", "lsp"]
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    },
+    // "ty": {
+    //   "binary": {
+    //     "path": "uvx",
+    //     "arguments": ["--quiet", "ty", "server"]
+    //   }
+    // },
+    // "vscode-css-language-server": {
+    //   "binary": {
+    //     "path": "deno",
+    //     "arguments": [
+    //       "run",
+    //       "--quiet",
+    //       "--no-lock",
+    //       "--allow-all",
+    //       "npm:@t1ckbase/vscode-langservers-extracted/vscode-css-language-server",
+    //       "--stdio"
+    //     ]
+    //   }
+    // },
+    // "vtsls": {
+    //   "binary": {
+    //     "path": "deno",
+    //     "arguments": [
+    //       "run",
+    //       "--quiet",
+    //       "--no-lock",
+    //       "--allow-all",
+    //       "npm:@vtsls/language-server",
+    //       "--stdio"
+    //     ]
+    //   }
+    // },
+    "zls": {
+      "binary": {
+        "path": "zls"
+      },
+      "settings": {
+        "enable_build_on_save": true
+        // "zls": {
+        //   "zig_exe_path": "C:\\Users\\Nah\\scoop\\shims\\zig.exe"
+        // }
+      }
+    }
+  },
+  "language_models": {
+    "openai_compatible": {
+      "OpenCode Zen": {
+        "api_url": "https://opencode.ai/zen/v1",
+        "available_models": [
+          {
+            "name": "grok-code",
+            "display_name": "Grok Code Fast 1",
+            "max_tokens": 256000,
+            "max_output_tokens": 256000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          },
+          {
+            "name": "big-pickle",
+            "display_name": "Big Pickle",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agent_servers": {
+    // "gemini": {
+    //   "ignore_system_version": false
+    // },
+    "OpenCode": {
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  },
+  "context_servers": {},
   "remove_trailing_whitespace_on_save": false
+
   // temp
   // "minimap": {
   //   "show": "always",
