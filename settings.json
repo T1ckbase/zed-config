@@ -4,19 +4,19 @@
   },
   "theme": "VSCode Dark Modern",
   "icon_theme": "Zed (Default)",
-  "base_keymap": "VSCode",
+  "base_keymap": null,
   "features": {
-    "edit_prediction_provider": "supermaven"
+    "edit_prediction_provider": "codestral"
   },
-  "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+  "buffer_font_family": "JetBrainsMonoNL Nerd Font Mono",
   "buffer_font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
   "buffer_font_features": {
     "calt": 0
   },
   "buffer_font_size": 14,
-  // "buffer_font_weight": 600,
+  // "buffer_font_weight": 500,
   "buffer_line_height": { "custom": 1.2 },
-  "ui_font_family": "JetBrainsMonoNL Nerd Font",
+  "ui_font_family": "JetBrainsMonoNL Nerd Font Mono",
   "ui_font_fallbacks": ["Source Han Sans TC", "Symbols Nerd Font"],
   // "ui_font_weight": 700,
   "ui_font_size": 15,
@@ -61,7 +61,7 @@
     },
     "default_model": {
       "provider": "OpenCode Zen",
-      "model": "big-pickle"
+      "model": "grok-code"
     },
     "use_modifier_to_send": true
   },
@@ -156,11 +156,16 @@
       "format_on_save": "on",
       "formatter": "language_server"
     },
+    "Python": {
+      "tab_size": 4
+    },
     "Rust": {
+      "tab_size": 4,
       "formatter": "language_server",
       "format_on_save": "on"
     },
     "Zig": {
+      "tab_size": 4,
       "formatter": [
         {
           "code_action": "source.organizeImports"
@@ -232,6 +237,13 @@
         "require_config_file": true
       }
     },
+    "deno": {
+      "settings": {
+        "deno": {
+          "enable": false
+        }
+      }
+    },
     // "emmet-language-server": {
     //   // "binary": {
     //   //   "path": "bunx",
@@ -248,11 +260,11 @@
     //     "arguments": [
     //       "run",
     //       "--quiet",
-    //       "--reload",
+    //       // "--reload",
     //       "--no-prompt",
     //       "--no-lock",
     //       "--allow-env",
-    //       "npm:@olrtg/emmet-language-server",
+    //       "npm:@olrtg/emmet-language-server@latest",
     //       "--stdio"
     //     ]
     //   }
@@ -277,9 +289,9 @@
       }
     },
     "zls": {
-      "binary": {
-        "path": "zls"
-      },
+      // "binary": {
+      //   "path": "zls"
+      // },
       "settings": {
         "enable_build_on_save": true
         // "zls": {
@@ -293,7 +305,12 @@
     // "use_system_clipboard": "on_yank",
     "highlight_on_yank_duration": 80
   },
-  "context_servers": {},
+  "context_servers": {
+    // "Bun Docs": {
+    //   "enabled": true,
+    //   "url": "https://bun.com/docs/mcp"
+    // }
+  },
   "agent_servers": {
     // "gemini": {
     //   "ignore_system_version": false

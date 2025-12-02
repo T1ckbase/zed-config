@@ -1,12 +1,5 @@
 [
   {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-w": null,
-      "ctrl-w c": "pane::CloseActiveItem"
-    }
-  },
-  {
     "context": "EmptyPane || SharedScreen || MarkdownPreview || vim_mode == normal",
     "bindings": {
       "space f f": "file_finder::Toggle",
